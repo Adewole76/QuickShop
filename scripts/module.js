@@ -1,3 +1,12 @@
+const storedCartCount = localStorage.getItem('cart')
+const parsedStoredCount = JSON.parse(storedCartCount);
+export let cartCount = parsedStoredCount?parsedStoredCount:0;
+
+export const cartCountIncrease = () =>{
+    cartCount = cartCount + 1;
+    console.log(cartCount)
+   localStorage.setItem('cart', JSON.stringify(cartCount));
+}
 export const products = [
   {
     id: 1,
