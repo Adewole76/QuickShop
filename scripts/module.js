@@ -7,6 +7,8 @@ export const cartCountIncrease = () =>{
     console.log(cartCount)
    localStorage.setItem('cart', JSON.stringify(cartCount));
 }
+
+export const cartArray = [];
 export const products = [
   {
     id: 1,

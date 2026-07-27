@@ -23,12 +23,14 @@ nav a{
 }
 .cart-number{
     position: absolute;
-    top: -2px;
-    right: 0;
+    top: -6px;
+    right: -2px;
     margin: 0;
     background-color: red;
     padding: 2px 4px;
     color: white;
+    font-size: 10px;
+    border-radius: 50%;
 }
 
 

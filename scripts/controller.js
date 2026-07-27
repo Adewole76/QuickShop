@@ -13,7 +13,14 @@ productsContainer.addEventListener('click', (event) => {
         cartCountIncrease();
     }
     cartNumber.innerHTML = cartCount;
-})
+    let specificButton = event.target.closest('button');
+    console.log(specificButton);
+    specificButton.style.color = 'green';
+    setTimeout(() => {
+      specificButton.style.color = 'black';
+}, 2000);
+   
+});
 cartNumber.innerHTML = cartCount;
 
 
