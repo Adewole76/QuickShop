@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Products</title>
 </head>
 <body>
     <nav>
@@ -17,12 +17,24 @@
             <a href="cart.html"> <img class="cart-pic" src="/assets/shopping-cart.png" alt="">cart</a>
             <p class="cart-number"></p>
         </div>
-    </nav>
+</nav>
 
+<section>
+ <h2>All products</h2>
+ <footer>
+    <input type="text" placeholder="search">
+    <section>
+        <button class="categoryFilter">All</button>
+        <button class="categoryFilter">Books</button>
+        <button class="categoryFilter">Electronics</button>
+        <button class="categoryFilter">Clothing</button>
+    </section>
+ </footer>
+</section>
     <main class="products-container">
 
     </main>
 
-    <script type="module" src="/scripts/controller.js"></script>
+    <script type="module" src="/scripts/productcontroller.js"></script>
 </body>
 </html>

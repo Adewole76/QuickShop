@@ -1,3 +1,4 @@
+import { products } from "./module";
 
     export const mappingProductsArray = (arrofProducts, container) =>{
        const mappedProductsArray = arrofProducts.map(product =>{
@@ -8,4 +9,12 @@
     }).join('');
     container.innerHTML = mappedProductsArray
     } 
+
+    export const mappingCartArray = (arrofCartProducts, containerForCart) => {
+        const mappedCartArray = arrofCartProducts.map(cartProduct =>{
+            return `<div class="cart-product">
+            
+            </div>`
+        }).join('')
+    }
     

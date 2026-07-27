@@ -1,14 +1,25 @@
+// cart count increment function
 const storedCartCount = localStorage.getItem('cart')
 const parsedStoredCount = JSON.parse(storedCartCount);
 export let cartCount = parsedStoredCount?parsedStoredCount:0;
-
 export const cartCountIncrease = () =>{
     cartCount = cartCount + 1;
-    console.log(cartCount)
+    console.log(cartCount);
    localStorage.setItem('cart', JSON.stringify(cartCount));
 }
 
 export const cartArray = [];
+export const addToCart = (name, image, price) => {
+   const newCartObject = {
+    productName: name,
+    productImage: image,
+    productPrice: price
+   }
+   cartArray.unshift(newCartObject);
+   localStorage.setItem('cartStuff', JSON.stringify(cartArray))
+};
+
+//Products list Array
 export const products = [
   {
     id: 1,
