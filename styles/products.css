@@ -1,0 +1,14 @@
+/*navbar styles*/
+
+
+
+
+/*product container styles*/
+.product{
+    background-color: red;
+    width: 100px;
+    height: 200px;
+}
+.product h5{
+    color: white;
+}
