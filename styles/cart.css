@@ -33,3 +33,11 @@ nav a{
     border-radius: 50%;
 }
 
+/*Cart and Order Summary Styles*/
+/*CART*/
+.product-image{
+    width: 50px;
+}
+.delete-img{
+    width: 20px;
+}

@@ -21,10 +21,15 @@ import { products } from "./module.js";
         const mappedCartArray = arrofCartProducts.map(cartProduct =>{
             return `<div class="cart-product" data-user-id=>
             <section>
-                <img src="${cartProduct.productImage}">
+                <img class="product-image" src="${cartProduct.productImage}">
                 <footer>
                     <h4>${cartProduct.productName}</h4>
                     <p>${cartProduct.productCategory}</p>
+                    <section class="product-quantity">
+                         <button class="sub-quantity">-</button>
+                         <p class="quantity"></p>
+                         <button class="add-Quantity">+</button>
+                    </section>
                 </footer>
             </section>
 

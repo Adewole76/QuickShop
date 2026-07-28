@@ -6,3 +6,7 @@ const cartNumber = document.querySelector('.cart-number')
 cartNumber.innerHTML = cartCount;
 console.log(cartArray)
 mappingCartArray(cartArray, cartContainer);
+
+cartContainer.addEventListener('click', (event)=>{
+
+})
