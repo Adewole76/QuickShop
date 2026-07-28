@@ -7,8 +7,6 @@ import { cartArray } from './module.js';
 
 const productsContainer = document.querySelector('.products-container');
 const cartNumber = document.querySelector('.cart-number')
-console.log(cartNumber);
-console.log(cartCountIncrease)
 mappingProductsArray(products, productsContainer);
 
 productsContainer.addEventListener('click', (event) => {
@@ -19,14 +17,21 @@ productsContainer.addEventListener('click', (event) => {
     
 
     let specificButton = event.target.closest('button');
-    console.log(specificButton);
-    specificButton.style.color = 'green';
+    specificButton.textContent = '✓ Added';
+    specificButton.style.color = '#16a34a';
+    specificButton.style.backgroundColor = 'white';
+    specificButton.style.borderColor = '#16a34a'
+    
 
     setTimeout(() => {
-      specificButton.style.color = 'black';
+      specificButton.style.color = 'white';
+      specificButton.style.backgroundColor = '#2563eb';
+      specificButton.textContent = 'Add to cart'
 }, 2000);
 
 const particularProductdiv = event.target.closest('.product');
+const productTobeAddedToCart =  products.find(product => product.id === Number(particularProductdiv.dataset.userId));
+addToCart(productTobeAddedToCart.name, productTobeAddedToCart.image, productTobeAddedToCart.price);
 });
 cartNumber.innerHTML = cartCount;
 
