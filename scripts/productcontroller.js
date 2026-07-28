@@ -31,7 +31,7 @@ productsContainer.addEventListener('click', (event) => {
 
 const particularProductdiv = event.target.closest('.product');
 const productTobeAddedToCart =  products.find(product => product.id === Number(particularProductdiv.dataset.userId));
-addToCart(productTobeAddedToCart.name, productTobeAddedToCart.image, productTobeAddedToCart.price);
+addToCart(productTobeAddedToCart.name, productTobeAddedToCart.image, productTobeAddedToCart.price, productTobeAddedToCart.category, productTobeAddedToCart.id);
 });
 cartNumber.innerHTML = cartCount;
 

@@ -7,13 +7,16 @@ export const cartCountIncrease = () =>{
     console.log(cartCount);
    localStorage.setItem('cart', JSON.stringify(cartCount));
 }
-
-export const cartArray = [];
-export const addToCart = (name, image, price) => {
+let storedcartArray = localStorage.getItem('cartStuff');
+let parsedStoredCartArray = JSON.parse(storedcartArray);
+export const cartArray = parsedStoredCartArray? parsedStoredCartArray:[];
+export const addToCart = (name, image, price, category, id) => {
    const newCartObject = {
+    productId: id,
     productName: name,
     productImage: image,
-    productPrice: price
+    productPrice: price,
+    productCategory: category
    }
    cartArray.unshift(newCartObject);
    localStorage.setItem('cartStuff', JSON.stringify(cartArray))

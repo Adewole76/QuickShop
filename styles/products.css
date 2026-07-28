@@ -6,6 +6,7 @@ body{
 nav{
     display: flex;
     justify-content: space-between;
+    padding: 0 5em;
 }
 nav a{
     color: black;
@@ -33,9 +34,30 @@ nav a{
     border-radius: 50%;
 }
 /*Filter Category Styles*/
+.filter-category{
+    padding: 0 5em;
+}
 .filter-category footer{
     display: flex;
+    margin-bottom: 2em;
 }
+.filter-category footer input{
+    padding: 5px;
+    width: 25%;
+    border-radius: 0.5em;
+    border: 1px solid #e5e7eb
+}
+.filter-category .filters{
+    margin-left: 10px;
+}
+.filter-category button{
+    background-color: white;
+    padding: 10px;
+    border-radius: 0.5em;
+    border: 1px solid #e5e7eb;
+}
+
+
 /*product container styles*/
 .products-container{
     width: 100%;
