@@ -36,7 +36,7 @@ import { products } from "./module.js";
             <section>
                 <button class="delete-btn"><img class="delete-img" src="/assets/bin.png"></button>
               <footer>
-              <p>${cartProduct.productPrice}</p>
+              <p class="totalQuantity-price">${cartProduct.totalPrice}</p>
               <p>${cartProduct.productPrice} each</p>
               </footer>
             </section>

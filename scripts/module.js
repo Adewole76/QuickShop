@@ -25,7 +25,8 @@ export const addToCart = (name, image, price, category, id) => {
     productImage: image,
     productPrice: price,
     productCategory: category,
-    productQuantity: 1
+    productQuantity: 1,
+    totalPrice: price
    }
    cartArray.unshift(newCartObject);
    localStorage.setItem('cartStuff', JSON.stringify(cartArray))
