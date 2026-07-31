@@ -1,3 +1,17 @@
+const storedCartTotal = localStorage.getItem('total')
+const parsedStoredCartTotal = JSON.parse(storedCartTotal)
+export let cartTotal = parsedStoredCartTotal?parsedStoredCartTotal:0
+export const calculateTotal = (product) =>{
+  cartTotal = cartTotal + product;
+  localStorage.setItem('total', JSON.stringify(cartTotal))
+}
+
+export const removeFromTotal = (product) =>{
+  cartTotal = cartTotal - product
+  localStorage.setItem('total', JSON.stringify(cartTotal))
+}
+
+
 // cart count increment function
 const storedCartCount = localStorage.getItem('cart')
 const parsedStoredCount = JSON.parse(storedCartCount);

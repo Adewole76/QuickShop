@@ -44,4 +44,14 @@ import { products } from "./module.js";
         }).join('');
         containerForCart.innerHTML = mappedCartArray;
     }
-    
+    export const mappingForSummary = (arr, container) => {
+       const mappedCartForSummary = arr.map(product =>{
+        return `
+        <footer class="product-totalPrice">
+         <p>${product.productName} x${product.productQuantity}</p>
+         <p>${product.totalPrice}<p>
+        </footer>
+        `
+       }).join('')
+       container.innerHTML = mappedCartForSummary
+    }

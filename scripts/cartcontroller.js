@@ -3,10 +3,15 @@ import { cartArray } from './module.js';
 import { mappingCartArray } from './view.js';
 import { updateCartArray } from './module.js';
 import { cartCountDecrease } from './module.js';
+import { mappingForSummary } from './view.js';
+import { calculateTotal } from './module.js';
+import { cartTotal } from './module.js';
+import { removeFromTotal } from './module.js';
 const cartContainer = document.querySelector('.cart-container');
 const cartNumber = document.querySelector('.cart-number')
+const summaryContainer = document.querySelector('.summary-container');
 cartNumber.innerHTML = cartCount;
-console.log(cartArray)
+console.log(cartArray);
 mappingCartArray(cartArray, cartContainer);
 
 cartContainer.addEventListener('click', (event)=>{
@@ -15,10 +20,15 @@ if(event.target.closest('.delete-btn')|| event.target.closest('.delete-img')){
     const particularcartProductid = particularcartProduct.dataset.userId;
     console.log(particularcartProductid);
     let filteredCartArray = cartArray.filter(cartProduct => cartProduct.productId !== Number(particularcartProductid))
+    const particularcartProductObject = cartArray.find(cartProduct => cartProduct.productId === Number(particularcartProductid))
+    console.log(particularcartProductObject)
     updateCartArray(filteredCartArray);
+    removeFromTotal(particularcartProductObject.productPrice)
     localStorage.setItem('cartStuff', JSON.stringify(cartArray))
     mappingCartArray(cartArray, cartContainer)
+    mappingForSummary(cartArray, summaryContainer);
     cartCountDecrease();
+    
     cartNumber.innerHTML = cartCount
 }else if(event.target.closest('.sub-quantity')){
  const particularsubButton = event.target.closest('.sub-quantity');
@@ -30,9 +40,11 @@ if(event.target.closest('.delete-btn')|| event.target.closest('.delete-img')){
  }else if(particularcartProductObject.productQuantity > 1){
     particularcartProductObject.productQuantity = particularcartProductObject.productQuantity - 1;
     particularcartProductObject.totalPrice = particularcartProductObject.totalPrice - particularcartProductObject.productPrice;
+    removeFromTotal(particularcartProductObject.productPrice)
     mappingCartArray(cartArray, cartContainer)
+    mappingForSummary(cartArray, summaryContainer)
     localStorage.setItem('cartStuff', JSON.stringify(cartArray));
- }
+}
 }
 else if(event.target.closest('.add-Quantity')){
  const particularsubButton = event.target.closest('.add-quanitity');
@@ -41,8 +53,12 @@ else if(event.target.closest('.add-Quantity')){
  const particularcartProductObject = cartArray.find(cartProduct => cartProduct.productId === Number(particularcartProductid))
  particularcartProductObject.productQuantity = particularcartProductObject.productQuantity + 1;
  particularcartProductObject.totalPrice = particularcartProductObject.totalPrice + particularcartProductObject.productPrice;
+ calculateTotal(particularcartProductObject.productPrice);
  mappingCartArray(cartArray, cartContainer);
+ mappingForSummary(cartArray, summaryContainer)
  console.log(particularcartProductObject.productQuantity);
  localStorage.setItem('cartStuff', JSON.stringify(cartArray));
 }
 })
+
+mappingForSummary(cartArray, summaryContainer)
