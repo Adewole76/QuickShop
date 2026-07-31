@@ -7,16 +7,25 @@ export const cartCountIncrease = () =>{
     console.log(cartCount);
    localStorage.setItem('cart', JSON.stringify(cartCount));
 }
+export const cartCountDecrease = () =>{
+  cartCount = cartCount - 1;
+  console.log(cartCount)
+  localStorage.setItem('cart', JSON.stringify(cartCount));
+}
 let storedcartArray = localStorage.getItem('cartStuff');
 let parsedStoredCartArray = JSON.parse(storedcartArray);
-export const cartArray = parsedStoredCartArray? parsedStoredCartArray:[];
+export let cartArray = parsedStoredCartArray? parsedStoredCartArray:[];
+export function updateCartArray(newArray) {
+    cartArray = newArray;
+}
 export const addToCart = (name, image, price, category, id) => {
    const newCartObject = {
     productId: id,
     productName: name,
     productImage: image,
     productPrice: price,
-    productCategory: category
+    productCategory: category,
+    productQuantity: 1
    }
    cartArray.unshift(newCartObject);
    localStorage.setItem('cartStuff', JSON.stringify(cartArray))

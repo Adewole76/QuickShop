@@ -19,15 +19,15 @@ import { products } from "./module.js";
 
     export const mappingCartArray = (arrofCartProducts, containerForCart) => {
         const mappedCartArray = arrofCartProducts.map(cartProduct =>{
-            return `<div class="cart-product" data-user-id=>
-            <section>
+            return `<div class="cart-product" data-user-id="${cartProduct.productId}">
+            <section class="image-name-category">
                 <img class="product-image" src="${cartProduct.productImage}">
                 <footer>
                     <h4>${cartProduct.productName}</h4>
                     <p>${cartProduct.productCategory}</p>
                     <section class="product-quantity">
                          <button class="sub-quantity">-</button>
-                         <p class="quantity"></p>
+                         <button class="quantity">${cartProduct.productQuantity}</button>
                          <button class="add-Quantity">+</button>
                     </section>
                 </footer>
@@ -35,6 +35,10 @@ import { products } from "./module.js";
 
             <section>
                 <button class="delete-btn"><img class="delete-img" src="/assets/bin.png"></button>
+              <footer>
+              <p>${cartProduct.productPrice}</p>
+              <p>${cartProduct.productPrice} each</p>
+              </footer>
             </section>
             </div>`
         }).join('');
