@@ -71,6 +71,7 @@ nav a{
     width: 250px;
     margin-bottom: 2em;
     border: 1px solid #e5e7eb;
+     overflow: hidden;
 }
 .image-category{
     width: 100%;
@@ -81,6 +82,10 @@ nav a{
     height: 200px;
     border-top-right-radius: 1em;
     border-top-left-radius: 1em;
+    transition: transform 0.5s ease;
+}
+.product img:hover{
+    transform: scale(1.2); 
 }
 .name-price-btn{
     padding: 0 1em;

@@ -10,7 +10,10 @@ import { removeFromTotal } from './module.js';
 const cartContainer = document.querySelector('.cart-container');
 const cartNumber = document.querySelector('.cart-number')
 const summaryContainer = document.querySelector('.summary-container');
-cartNumber.innerHTML = cartCount;
+const totalAmount = document.querySelector('.total-amount');
+console.log(totalAmount);
+totalAmount.innerHTML = cartTotal;
+cartNumber.innerHTML = cartArray.length;
 console.log(cartArray);
 mappingCartArray(cartArray, cartContainer);
 
@@ -23,13 +26,13 @@ if(event.target.closest('.delete-btn')|| event.target.closest('.delete-img')){
     const particularcartProductObject = cartArray.find(cartProduct => cartProduct.productId === Number(particularcartProductid))
     console.log(particularcartProductObject)
     updateCartArray(filteredCartArray);
-    removeFromTotal(particularcartProductObject.productPrice)
+    removeFromTotal(particularcartProductObject.totalPrice)
     localStorage.setItem('cartStuff', JSON.stringify(cartArray))
     mappingCartArray(cartArray, cartContainer)
     mappingForSummary(cartArray, summaryContainer);
     cartCountDecrease();
-    
-    cartNumber.innerHTML = cartCount
+    totalAmount.innerHTML = cartTotal;
+    cartNumber.innerHTML = cartArray.length
 }else if(event.target.closest('.sub-quantity')){
  const particularsubButton = event.target.closest('.sub-quantity');
  const particularcartProduct = event.target.closest('.cart-product');
@@ -43,6 +46,7 @@ if(event.target.closest('.delete-btn')|| event.target.closest('.delete-img')){
     removeFromTotal(particularcartProductObject.productPrice)
     mappingCartArray(cartArray, cartContainer)
     mappingForSummary(cartArray, summaryContainer)
+    totalAmount.innerHTML = cartTotal;
     localStorage.setItem('cartStuff', JSON.stringify(cartArray));
 }
 }
@@ -57,6 +61,7 @@ else if(event.target.closest('.add-Quantity')){
  mappingCartArray(cartArray, cartContainer);
  mappingForSummary(cartArray, summaryContainer)
  console.log(particularcartProductObject.productQuantity);
+ totalAmount.innerHTML = cartTotal;
  localStorage.setItem('cartStuff', JSON.stringify(cartArray));
 }
 })
