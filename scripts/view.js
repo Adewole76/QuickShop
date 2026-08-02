@@ -49,7 +49,7 @@ import { products } from "./module.js";
         return `
         <footer class="product-totalPrice">
          <p>${product.productName} x${product.productQuantity}</p>
-         <p>${product.totalPrice}<p>
+         <p>${product.totalPrice}</p>
         </footer>
         `
        }).join('')

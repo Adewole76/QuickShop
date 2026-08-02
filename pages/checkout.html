@@ -3,10 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="/styles/checkout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    
+    <nav>
+        <h4 class="logo">Quickshop</h4>
+        <a href="productlisting.html">Products</a>
+        <div class="cart-pic-count">
+            <a href="cart.html"> <img class="cart-pic" src="/assets/shopping-cart.png" alt="">cart</a>
+            <p class="cart-number"></p>
+        </div>
+</nav>
+    <main class="main-order-container">
+        <a href="/pages/cart.html">&larr;Back to Cart</a>
+         <h2>Checkout</h2>
+    <section class="form-order-details">
+        <section class="form-container">
+        <form class="order-form" action="">
+            <section class="form-section one">
+              <header>
+                <h2><span class="span-text">1</span> Contact Information</h2>
+                 </header>
+                <footer>
+                    <section class="names">
+                    <label for="">
+                        Full Name
+                        <input type="text" placeholder="Jane">
+                    </label>
+                    <label for="">
+                        Last Name
+                        <input type="text" placeholder="Smith">
+                    </label>
+                    </section>
+                    <section class="email-phone">
+                    <label for="">
+                        Email Address
+                        <input type="email" placeholder="jane@example.com">
+                    </label>
+                    <label for="">
+                        Phone(Optional)
+                        <input type="tel">
+                    </label>
+                    </section>
+                </footer>
+            </section>
+
+            <section class="form-section two">
+           <header><h2><span class="span-text">2</span> Shipping Address</h2></header>
+           <footer> 
+            
+                <label for="">
+                    Street Address
+                    <input type="text">
+                </label>
+                
+                <section class="city-details">
+                        <label for="">
+                            City
+                            <input type="text" placeholder="New York">
+                        </label>
+                        <label for="">
+                            State
+                            <input type="text" placeholder="NY">
+                        </label>
+                        <label for="" placeholder="001">
+                            Zip Code
+                            <input type="text">
+                        </label>
+                        <label for="" placeholder="Nigeria">
+                            Country
+                            <input type="text">
+                        </label>
+                </section>
+           </footer>
+            </section>
+
+            <section class="form-section three">
+             <header><h2><span class="span-text">3</span> Payment Details</h2></header>
+             <footer>
+                    <section>
+                        <label for="">
+                            Name on Card
+                            <input type="text">
+                        </label>
+                        <label for="">
+                        Card Number
+                            <input type="text">
+                        </label>
+                    </section>
+                    <section class="Expiry-cvv">
+                        <label for="">
+                            Expiry Date
+                            <input type="text">
+                        </label>
+                        <label for="">
+                        Cvv
+                            <input type="text">
+                        </label>
+                    </section>
+             </footer>
+            </section>
+        </form>
+        <button class="order-btn">Place Order&rarr;</button>
+    </section>
+       
+         
+        <section class="checkout-ordersummary">
+        <h2>Order Summary</h2>
+        <section class="summary-container">
+        
+        </section>
+        <section class="subtotal-shipping">
+            <footer>
+                <h3>Subtotal</h3>
+                <p class="subtotal"></p>
+            </footer>
+            <footer>
+                <h3>Shipping</h3>
+                <p class="free">Free</p>
+            </footer>
+            <footer>
+               <h5>Total</h5>
+               <p class="checkout-total"></p>
+            </footer>
+        </section>
+    </section>
+    </main>
+<script type="module" src="/scripts/checkoutcontroller.js"></script>    
 </body>
 </html>
