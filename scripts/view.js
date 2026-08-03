@@ -4,8 +4,9 @@ import { products } from "./module.js";
        const mappedProductsArray = arrofProducts.map(product =>{
      return `<div class="product" data-user-id ="${product.id}">
      <section class="image-category">
-        <img src="${product.image}">
-     </section>
+        <img class="image-product" src="${product.image}">
+       <p class="category">${product.category}</p>
+        </section>
 
      <section class="name-price-btn">
         <h5 class="name-of-product">${product.name}</h5>
