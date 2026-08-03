@@ -17,7 +17,7 @@ import { products } from "./module.js";
     container.innerHTML = mappedProductsArray
     } 
 
-    export const mappingCartArray = (arrofCartProducts, containerForCart) => {
+    export const mappingCartArray = (arrofCartProducts, containerForCart, containerForEmptyState, containerForSummary) => {
         const mappedCartArray = arrofCartProducts.map(cartProduct =>{
             return `<div class="cart-product" data-user-id="${cartProduct.productId}">
             <section class="image-name-category">
@@ -42,7 +42,25 @@ import { products } from "./module.js";
             </section>
             </div>`
         }).join('');
+        if(arrofCartProducts.length === 0){
+          containerForCart.classList.add('hidden')
+          containerForSummary.classList.add('hidden')
+          containerForEmptyState.classList.remove('hidden');
+          document.body.style.height= '100vh';
+          document.body.style.display= 'flex';
+          document.body.style.justifyContent = 'center';
+          document.body.style.alignContent = 'center';
+          const itemsNumber = document.querySelector('.cart-items-number');
+          const cartHeader = document.querySelector('.heading')
+          itemsNumber.classList.add('hidden')
+          cartHeader.classList.add('hidden')
+          const mainContent = document.querySelector('.main-content-container');
+          mainContent.classList.remove('hidden')
+        }else if(arrofCartProducts.length > 0){
         containerForCart.innerHTML = mappedCartArray;
+        const mainContent = document.querySelector('.main-content-container');
+        mainContent.classList.add('hidden')
+        }
     }
     export const mappingForSummary = (arr, container) => {
        const mappedCartForSummary = arr.map(product =>{

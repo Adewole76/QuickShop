@@ -13,6 +13,8 @@ const summaryContainer = document.querySelector('.summary-container');
 const totalAmount = document.querySelector('.total-amount');
 const subTotal = document.querySelector('.subtotal')
 const cartItemsNumber = document.querySelector('.cart-items-number');
+const cartOrderSummary = document.querySelector('.cart-ordersummary');
+const emptyState = document.querySelector('.empty-state')
 console.log(totalAmount);
 
 cartItemsNumber.innerHTML = cartArray.length === 1?`${cartArray.length} item`:`${cartArray.length} items`;
@@ -20,7 +22,7 @@ subTotal.innerHTML = cartTotal
 totalAmount.innerHTML = cartTotal;
 cartNumber.innerHTML = cartArray.length;
 console.log(cartArray);
-mappingCartArray(cartArray, cartContainer);
+mappingCartArray(cartArray, cartContainer, emptyState, cartOrderSummary);
 
 cartContainer.addEventListener('click', (event)=>{
 if(event.target.closest('.delete-btn')|| event.target.closest('.delete-img')){
@@ -33,12 +35,13 @@ if(event.target.closest('.delete-btn')|| event.target.closest('.delete-img')){
     updateCartArray(filteredCartArray);
     removeFromTotal(particularcartProductObject.totalPrice)
     localStorage.setItem('cartStuff', JSON.stringify(cartArray))
-    mappingCartArray(cartArray, cartContainer)
-    mappingForSummary(cartArray, summaryContainer);
+    mappingCartArray(cartArray, cartContainer, emptyState, cartOrderSummary)
+    mappingForSummary(cartArray, summaryContainer)
     cartCountDecrease();
     subTotal.innerHTML = cartTotal
     totalAmount.innerHTML = cartTotal;
     cartNumber.innerHTML = cartArray.length
+    cartItemsNumber.innerHTML = cartArray.length === 1?`${cartArray.length} item`:`${cartArray.length} items`;
 }else if(event.target.closest('.sub-quantity')){
  const particularsubButton = event.target.closest('.sub-quantity');
  const particularcartProduct = event.target.closest('.cart-product');
@@ -50,7 +53,7 @@ if(event.target.closest('.delete-btn')|| event.target.closest('.delete-img')){
     particularcartProductObject.productQuantity = particularcartProductObject.productQuantity - 1;
     particularcartProductObject.totalPrice = particularcartProductObject.totalPrice - particularcartProductObject.productPrice;
     removeFromTotal(particularcartProductObject.productPrice)
-    mappingCartArray(cartArray, cartContainer)
+   mappingCartArray(cartArray, cartContainer, emptyState, cartOrderSummary)
     mappingForSummary(cartArray, summaryContainer)
     totalAmount.innerHTML = cartTotal;
     subTotal.innerHTML = cartTotal;
@@ -65,7 +68,7 @@ else if(event.target.closest('.add-Quantity')){
  particularcartProductObject.productQuantity = particularcartProductObject.productQuantity + 1;
  particularcartProductObject.totalPrice = particularcartProductObject.totalPrice + particularcartProductObject.productPrice;
  calculateTotal(particularcartProductObject.productPrice);
- mappingCartArray(cartArray, cartContainer);
+ mappingCartArray(cartArray, cartContainer, emptyState, cartOrderSummary)
  mappingForSummary(cartArray, summaryContainer)
  console.log(particularcartProductObject.productQuantity);
  totalAmount.innerHTML = cartTotal;
@@ -74,4 +77,4 @@ else if(event.target.closest('.add-Quantity')){
 }
 })
 
-mappingForSummary(cartArray, summaryContainer)
+ mappingForSummary(cartArray, summaryContainer)

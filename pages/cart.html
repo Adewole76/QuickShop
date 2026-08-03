@@ -18,7 +18,7 @@
             <p class="cart-number"></p>
         </div>
     </nav>
-<h2>Your Cart</h2>  
+<h2 class="heading">Your Cart</h2>  
 <p class="cart-items-number"></p>  
 <section class="cart-order-container">
     <main class="cart-container">
@@ -47,6 +47,22 @@
         </section>
         <a href="checkout.html" class="checkout-link">Proceed to checkout&rarr;</a>
     </section>
+
+</section>
+ <section class="empty-state hidden">
+    <section class="main-content-container">
+       <div class="image-container">
+        <img class="empty-state-image" src="/assets/shopping-cart.png" alt="">
+        </div>
+        <section class="text-section">
+        <h3>Your Cart is Empty</h3>
+        <p>Looks like you haven't added 
+            anything yet browse our    
+            collection and find what you love
+        </p>
+        <a href="productlisting.html" class="ctn-shopping-btn">&larr;Continue Shopping</a>
+    </section>
+ </section>
 </section>
     <script type="module" src="/scripts/cartcontroller.js"></script>
 </body>
