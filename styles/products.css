@@ -4,6 +4,9 @@ body{
     position:relative;
     margin-top: 5em;
 }
+.hidden{
+    display: none;
+}
 
 /*navbar styles*/
 nav{
@@ -50,6 +53,7 @@ nav a{
 .filter-category footer{
     display: flex;
     margin-bottom: 2em;
+    display: hidden;
 }
 .filter-category footer input{
     padding: 5px;
