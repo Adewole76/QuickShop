@@ -11,7 +11,12 @@ const cartContainer = document.querySelector('.cart-container');
 const cartNumber = document.querySelector('.cart-number')
 const summaryContainer = document.querySelector('.summary-container');
 const totalAmount = document.querySelector('.total-amount');
+const subTotal = document.querySelector('.subtotal')
+const cartItemsNumber = document.querySelector('.cart-items-number');
 console.log(totalAmount);
+
+cartItemsNumber.innerHTML = cartArray.length === 1?`${cartArray.length} item`:`${cartArray.length} items`;
+subTotal.innerHTML = cartTotal
 totalAmount.innerHTML = cartTotal;
 cartNumber.innerHTML = cartArray.length;
 console.log(cartArray);
@@ -31,6 +36,7 @@ if(event.target.closest('.delete-btn')|| event.target.closest('.delete-img')){
     mappingCartArray(cartArray, cartContainer)
     mappingForSummary(cartArray, summaryContainer);
     cartCountDecrease();
+    subTotal.innerHTML = cartTotal
     totalAmount.innerHTML = cartTotal;
     cartNumber.innerHTML = cartArray.length
 }else if(event.target.closest('.sub-quantity')){
@@ -47,6 +53,7 @@ if(event.target.closest('.delete-btn')|| event.target.closest('.delete-img')){
     mappingCartArray(cartArray, cartContainer)
     mappingForSummary(cartArray, summaryContainer)
     totalAmount.innerHTML = cartTotal;
+    subTotal.innerHTML = cartTotal;
     localStorage.setItem('cartStuff', JSON.stringify(cartArray));
 }
 }
@@ -62,6 +69,7 @@ else if(event.target.closest('.add-Quantity')){
  mappingForSummary(cartArray, summaryContainer)
  console.log(particularcartProductObject.productQuantity);
  totalAmount.innerHTML = cartTotal;
+ subTotal.innerHTML = cartTotal;
  localStorage.setItem('cartStuff', JSON.stringify(cartArray));
 }
 })
