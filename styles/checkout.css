@@ -136,5 +136,31 @@ input{
     border: 1px solid transparent;
     text-decoration: none;
     border-radius: 1em;
-  
+}
+@media (max-width: 966px) {
+    .form-order-details{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 2em
+    }
+}
+@media(max-width: 500px){
+  body{
+    padding: 0 1em;
+  }
+  nav{
+    padding: 1em;
+  }
+  .names{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .city-details{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .Expiry-cvv{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }

@@ -148,3 +148,18 @@ nav a{
 .cartadd-btn:hover {
     background-color: #1d4ed8;
 }
+@media (max-width: 539px) {
+    nav {
+     padding: 1em 1em;
+    }
+    .filter-category{
+        padding: 0 1em;
+    }
+    .products-container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .product{
+        width: 100%;
+    }
+}
