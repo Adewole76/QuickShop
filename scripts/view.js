@@ -4,7 +4,7 @@ import { products } from "./module.js";
        const mappedProductsArray = arrofProducts.map(product =>{
      return `<div class="product" data-user-id ="${product.id}">
      <section class="image-category">
-        <img class="image-product" src="${product.image}">
+        <img class="image-product" src="${product.image}" loading="lazy">
        <p class="category">${product.category}</p>
         </section>
 
