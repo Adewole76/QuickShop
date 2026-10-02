@@ -53,7 +53,7 @@ export const products = [
     name: "Wireless Bluetooth Headphones",
     price: 18500,
     category: "Electronics",
-    image: "/assets/stuff3.jpg",
+    image: "/outputImgs/stuff3.webp",
     description: "Noise-cancelling wireless headphones with long battery life.",
     inStock: true
   },
@@ -62,7 +62,7 @@ export const products = [
     name: "Smart Watch Pro",
     price: 32000,
     category: "Electronics",
-    image: "/assets/stuff3.jpg",
+    image: "/outputImgs/stuff3.webp",
     description: "Fitness tracking smartwatch with heart rate monitor.",
     inStock: true
   },
@@ -71,7 +71,7 @@ export const products = [
     name: "Casual Cotton T-Shirt",
     price: 6500,
     category: "Clothing",
-    image: "/assets/stuff3.jpg",
+    image: "/outputImgs/stuff3.webp",
     description: "Comfortable cotton t-shirt available in multiple colors.",
     inStock: true
   },
@@ -80,7 +80,7 @@ export const products = [
     name: "Leather Sneakers",
     price: 27500,
     category: "Clothing",
-    image: "/assets/stuff5.jpg",
+    image: "/outputImgs/stuff5.webp",
     description: "Stylish and durable leather sneakers for everyday wear.",
     inStock: true
   },
@@ -89,7 +89,7 @@ export const products = [
     name: "JavaScript: The Complete Guide",
     price: 8900,
     category: "Books",
-    image: "/assets/stuff2.jpg",
+    image: "/outputImgs/stuff2.webp",
     description: "Comprehensive guide to modern JavaScript development.",
     inStock: true
   },
@@ -98,7 +98,7 @@ export const products = [
     name: "Mechanical Keyboard",
     price: 24500,
     category: "Electronics",
-    image: "/assets/stuff4.jpg",
+    image: "/outputImgs/stuff4.webp",
     description: "RGB mechanical keyboard with tactile switches.",
     inStock: true
   },
@@ -107,7 +107,7 @@ export const products = [
     name: "Portable Power Bank 20000mAh",
     price: 12500,
     category: "Electronics",
-    image: "/assets/stuff5.jpg",
+    image: "/outputImgs/stuff5.webp",
     description: "Fast-charging power bank with dual USB ports.",
     inStock: true
   },
@@ -116,7 +116,7 @@ export const products = [
     name: "Denim Jacket",
     price: 19500,
     category: "Clothing",
-    image: "/assets/stuff3.jpg",
+    image: "/outputImgs/stuff3.webp",
     description: "Classic denim jacket suitable for all seasons.",
     inStock: true
   },
@@ -125,7 +125,7 @@ export const products = [
     name: "Notebook Set (3 Pack)",
     price: 4500,
     category: "Books",
-    image: "/assets/stuff2.jpg",
+    image: "/outputImgs/stuff2.webp",
     description: "Set of 3 high-quality ruled notebooks.",
     inStock: true
   },
@@ -134,7 +134,7 @@ export const products = [
     name: "Wireless Mouse",
     price: 7800,
     category: "Electronics",
-    image: "/assets/stuff3.jpg",
+    image: "/outputImgs/stuff3.webp",
     description: "Ergonomic wireless mouse with silent clicks.",
     inStock: true
   },
@@ -143,7 +143,7 @@ export const products = [
   name: "USB-C Hub Adapter",
   price: 9800,
   category: "Electronics",
-  image: "/assets/stuff5.jpg",
+  image: "/outputImgs/stuff5.webp",
   description: "7-in-1 USB-C hub with HDMI, USB ports, and SD card reader.",
   inStock: true
 },
@@ -152,7 +152,7 @@ export const products = [
   name: "Classic Hoodie",
   price: 14500,
   category: "Clothing",
-  image: "/assets/stuff.jpg",
+  image: "/outputImgs/stuff.webp",
   description: "Comfortable fleece hoodie perfect for casual wear.",
   inStock: true
 },
@@ -161,7 +161,7 @@ export const products = [
   name: "Web Development Handbook",
   price: 7200,
   category: "Books",
-  image: "/assets/stuff2.jpg",
+  image: "/outputImgs/stuff2.webp",
   description: "Practical guide covering HTML, CSS, and modern JavaScript.",
   inStock: true
 },
@@ -170,7 +170,7 @@ export const products = [
   name: "Wireless Earbuds",
   price: 16500,
   category: "Electronics",
-  image: "/assets/stuff3.jpg",
+  image: "/outputImgs/stuff3.webp",
   description: "True wireless earbuds with noise isolation and long battery life.",
   inStock: true
 },
@@ -179,7 +179,7 @@ export const products = [
   name: "Canvas Backpack",
   price: 18900,
   category: "Clothing",
-  image: "/assets/stuff4.jpg",
+  image: "/outputImgs/stuff4.webp",
   description: "Durable canvas backpack with multiple compartments.",
   inStock: true
 }
