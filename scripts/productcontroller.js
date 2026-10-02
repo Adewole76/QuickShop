@@ -29,6 +29,7 @@ productsContainer.addEventListener('click', (event) => {
       specificButton.style.color = 'white';
       specificButton.style.backgroundColor = '#2563eb';
       specificButton.textContent = 'Add to cart'
+      specificButton.style.borderColor = 'transparent';
 }, 2000);
 
 const particularProductdiv = event.target.closest('.product');
